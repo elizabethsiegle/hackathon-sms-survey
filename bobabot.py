@@ -33,15 +33,43 @@ def sms():
         session['question_on'] = question_on
         print(question_on)
     elif msg == "22390492" and question_on == 3:
-        res.message("correct! task 1: Dance with the Firebase people for 2 seconds and take a picture while doing so. Text back \'goog\'.")
+        res.message("correct! Q4: What was the first word said on the first phone call (no abbreviations?") #task 1: take a picture with a Twilio sticker or Twilio shirt and upload it to social media (Twitter, Instagram) with @twilio, @sb_hacks, and #twilio #makingwaves. Text back \'twlo\'.")
         question_on +=1
         session['question_on'] = question_on
         print(question_on)
-    elif msg == 'goog':
+    elif msg == 'mister' and question_on == 4:
         question_on +=1
         session['question_on'] = question_on
         print(question_on)
-        res.message("come to the Twilio booth, show Lizzie, and tell her your favorite ice cream flavor")
+        res.message("you right. Q5: the creators of what tv show spoke at twilio's conference last october?")
+    elif msg == "westworld" and question_on == 5:
+        question_on += 1
+        session['question_on'] = question_on
+        print(question_on)
+        res.message("noice. Q6: what ucsb sport has a tortilla toss tradition?") 
+    elif msg == "soccer" and question_on == 6:
+        question_on += 1
+        session['question_on'] = question_on
+        print(question_on)
+        res.message("yep. Q7: what type of dog was on stage with a speaker at the last Twilio conference?")
+    elif msg == "corgi" and question_on == 7:
+        question_on += 1
+        session['question_on'] = question_on
+        print(question_on)
+        res.message("yupp. Q8: what MLH hackathon ran a SMS-scavenger hunt boba contest in October 2018? Hint: it's a big hackathon and it's cold.")
+    elif msg == "mhacks" and question_on == 8:
+        question_on += 1
+        session['question_on'] = question_on
+        print(question_on)
+        res.message("correct. take a selfie with either Diane, Erin, Chandler, Esther, or Jennifer of the organizing team. text back \'makewaves\'")
+    elif msg == "makewaves" and question_on == 9:
+        question_on += 1
+        session['question_on'] = question_on
+        print(question_on)
+        res.message("take a picture with a Twilio shirt or sticker and post it to social media with @twilio and #twilio, #makingwaves text back \'twlo\'")
+    elif msg == "twlo" and question_on == 10:
+        res.message(
+            "come to the bench outside, show Lizzie the pictures, and receive your boba (limited quantity)")
     else:
         res.message("Nice try, try again!")
         print(question_on)
