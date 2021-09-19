@@ -16,61 +16,76 @@ def sms():
     if msg == "clear" or msg == "reset":
         question_on = 0
         session['question_on'] = question_on
+    if msg != "play" and question_on == 0:
+        res.message("Text \'play\' to play⚽🎾⛹️‍♀️🎱")
     if msg == "play" and question_on == 0:
-        res.message("Q1: What did the first SMS message sent say?")
+        res.message("Q1: What did the first SMS message sent say?📱")
         question_on += 1
         session['question_on'] = question_on
         print(question_on)
     elif msg == "merry christmas" and question_on == 1:
-        res.message("You go Glen Coco! Q2: What is the most popular password?")
+        res.message("🎄You go Glen Coco🎅! Q2: What is the most popular password?👩‍💻👨‍💻")
         question_on +=1
         session['question_on'] = question_on
         print(question_on)
     elif msg == "123456" and question_on == 2:
         res.message(
-            "Noice. Q3: How often did the most common password appear in Pwned Passwords? (no commas)")
+            "Noice. Q3: The Twilio founders wrote out the plan for Twilio on the back of what in 2007?✏🖊✐")
         question_on +=1
         session['question_on'] = question_on
         print(question_on)
-    elif msg == "22390492" and question_on == 3:
-        res.message("correct! Q4: What was the first word said on the first phone call (no abbreviations?") #task 1: take a picture with a Twilio sticker or Twilio shirt and upload it to social media (Twitter, Instagram) with @twilio, @sb_hacks, and #twilio #makingwaves. Text back \'twlo\'.")
+    elif msg == "pizza box" and question_on == 3:
+        res.message("🍕correct🍕! Q4: What was the first word said on the first phone call?☎📱📞")
         question_on +=1
         session['question_on'] = question_on
         print(question_on)
-    elif msg == 'mister' and question_on == 4:
+    elif (msg == 'mister' and question_on == 4) or (msg == 'mr' and question_on == 4) or (msg == 'mr.' and question_on == 4):
         question_on +=1
         session['question_on'] = question_on
         print(question_on)
-        res.message("you right. Q5: the creators of what tv show spoke at twilio's conference last october?")
-    elif msg == "westworld" and question_on == 5:
+        res.message("you right.👨🕺 Q5: how many nations have ruled over texas?🌐🌎🌍")
+    elif msg == "6" and question_on == 5 or msg == "six" and question_on == 5 or msg == 6 and question_on == 5:
         question_on += 1
         session['question_on'] = question_on
         print(question_on)
-        res.message("noice. Q6: what ucsb sport has a tortilla toss tradition?") 
-    elif msg == "soccer" and question_on == 6:
+        res.message("noice. Q6: What is the average number of tornadoes in texas per year?🌪🌀") 
+    elif (msg == "132" and question_on == 6) or (msg == 132 and question_on == 6):
         question_on += 1
         session['question_on'] = question_on
         print(question_on)
-        res.message("yep. Q7: what type of dog was on stage with a speaker at the last Twilio conference?")
-    elif msg == "corgi" and question_on == 7:
+        res.message("yep. Q7: how much did the first item sold on eBay sell for?💻")
+    elif ("14.83" in msg and question_on == 7):
         question_on += 1
         session['question_on'] = question_on
         print(question_on)
-        res.message("yupp. Q8: what MLH hackathon ran a SMS-scavenger hunt boba contest in October 2018? Hint: it's a big hackathon and it's cold.")
-    elif msg == "mhacks" and question_on == 8:
+        res.message("yupp. Q8: what year was the first email sent?📧📫")
+    elif (msg == "1971" and question_on == 8) or (msg == 1971 and question_on == 8) :
         question_on += 1
         session['question_on'] = question_on
         print(question_on)
-        res.message("correct. take a selfie with either Diane, Erin, Chandler, Esther, or Jennifer of the organizing team. text back \'makewaves\'")
-    elif msg == "makewaves" and question_on == 9:
+        res.message("correct. How many countries does Twilio have offices in?")
+    elif msg == "17" and question_on == 9:
         question_on += 1
         session['question_on'] = question_on
         print(question_on)
-        res.message("take a picture with a Twilio shirt or sticker and post it to social media with @twilio and #twilio, #makingwaves text back \'twlo\'")
-    elif msg == "twlo" and question_on == 10:
+        res.message("yusss. Who wrote the 1st book📖 ever ordered by a customer on Amazon? It was a programming book📖! Send 1st + last name pls")
+    elif msg == "douglas hofstadter" and question_on == 10:
+        question_on += 1
+        session['question_on'] = question_on
+        print(question_on)
+        res.message("yeet. task 1: take a pic🤳 w/ a Twilio sticker or Twilio shirt 👕 and POST it to social media (Twitter, IG, or LinkedIn)📲 w/ @twilio, @pinnacleusorg, @twiliodevs, and #twilio. Text back \'twlo\'.")
+    elif msg == "twlo" and question_on == 11:
+        question_on += 1
+        session['question_on'] = question_on
+        print(question_on)
+        res.message("make or find a developer meme and tweet-reply📲 it at @twiliodevs here: twitter.com/TwilioDevs/status/1438893015439921157. Text back \'meme\'")
+    elif msg == "meme" and question_on == 12:
+        question_on += 1
+        session['question_on'] = question_on
+        print(question_on)
         res.message(
-            "come to the bench outside, show Lizzie the pictures, and receive your boba (limited quantity)")
-    else:
+            "come to the twilio booth, show Lizzie the picture and meme, and receive your boba (limited quantity)")
+    elif question_on != 0:
         res.message("Nice try, try again!")
         print(question_on)
     return str(res)
